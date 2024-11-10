@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctheow8qjmv7j"]
+
+[ext_resource type="Script" path="res://tps_controller/TPSController.gd" id="1_o1l47"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tb403"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0wkm3"]
+
+[node name="TPSController" type="CharacterBody3D"]
+script = ExtResource("1_o1l47")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_tb403")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.511129, 0)
+shape = SubResource("SphereShape3D_0wkm3")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.352243, 0)
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
